@@ -18,6 +18,7 @@ int main() {
 
 	short a = 3, b = 4;
 	cout << maxFunc(a, b);
+	cout << "Конец!";
 
 	return 0;
 }
