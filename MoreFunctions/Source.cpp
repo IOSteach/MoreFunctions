@@ -2,23 +2,35 @@
 #include <iostream>
 using namespace std;
 
-template <typename T1, typename T2> T1 maxFunc(T1 num1, T2 num2) {
-	return num1 > num2 ? num1 : num2;
+template <typename T> T mean(T array[], int length) {
+	T sum = 0;
+	for (int i = 0; i < length; i++)
+		sum += array[i];
+	return sum / length;
 }
 
+int mean(int array[], int length) {
+	int sum = 0;
+	for (int i = 0; i < length; i++)
+		sum += array[i];
+	return sum / length;
+}
+float mean(float array[], int length) {
+	float sum = 0;
+	for (int i = 0; i < length; i++)
+		sum += array[i];
+	return sum / length;
+}
 
 int main() {
 	setlocale(LC_ALL, "Russian");
-	float n, m;
-	cin >> n >> m;
-
-	cout << maxFunc(n, m) << endl;
-	cout << maxFunc(8, 4.9) << endl;
-	cout << maxFunc(true, true);
-
-	short a = 3, b = 4;
-	cout << maxFunc(a, b);
-	cout << "Конец!";
+	
+	// Задача 1
+	cout << "Задача 1.\nИзначальный массив:\n";
+	float z1[5] = { 4.1, 4.9, 2.02, 0.101, 1.2 };
+	for (int i = 0; i < 5; i++)
+		cout << z1[i] << " ";
+	cout << "\nСреднее арифметическое элементов массива = " << mean(z1, 5) << endl;
 
 	return 0;
 }
